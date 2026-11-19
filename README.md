@@ -2,7 +2,7 @@
 
 A Spotify-themed classroom project for listening discovery, playlist preferences and podcast continuation. All 300 listener histories are synthetic. The app uses the supplied Indian music catalog.
 
-[Open the private app](https://listening-memory-lab-gagan.enthusiasticrhino3.chatgpt.site) · [Watch the demo (earlier layout)](docs/walkthrough.mp4) · [Open the executed EDA notebook](analysis/listening_eda.ipynb)
+[Open the hosted review app](https://listening-memory-lab-gagan.enthusiasticrhino3.chatgpt.site) · [Watch the demo (earlier layout)](docs/walkthrough.mp4) · [Open the executed EDA notebook](analysis/listening_eda.ipynb)
 
 ## Run on your laptop
 
@@ -50,7 +50,7 @@ Node.js with SQLite runs locally. The hosted Worker uses D1. The small graph and
 
 Default answers use catalog rules. To run the model integration, serve a local Ollama chat model with structured-output support, copy .env.example to .env, set OLLAMA_URL to http://127.0.0.1:11434 and OLLAMA_MODEL to the installed model name, then restart. The model receives approved choices and a small context package. It cannot write memories or invent catalog IDs. Tests used controlled model responses. No live model weights were available in the verification environment.
 
-[API, deployment and operations](docs/operations.md) · [Hinglish demo and viva notes](docs/viva.md)
+[API, deployment and operations](docs/operations.md) · [AlmaX review readiness](docs/review-readiness.md) · [Reviewer demo script](docs/reviewer-demo-script.md) · [Hinglish demo and viva notes](docs/viva.md)
 
 ## Submission and ownership
 
