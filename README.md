@@ -1,4 +1,4 @@
-# Listening Memory
+# Spotify: Personalised AI Memory
 
 A Spotify-themed classroom project for listening discovery, playlist preferences and podcast continuation. All 300 listener histories are synthetic. The app uses the supplied Indian music catalog.
 
