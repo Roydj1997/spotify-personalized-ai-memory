@@ -30,28 +30,16 @@ Open the same local address. The Compose configuration mounts a named volume for
 | --- | --- | --- |
 | `U0001` | Open **Home → View request → View source**. | The initial request recommends *Tum Hi Ho*. Its source shows the listener's preference for Arijit Singh. |
 | `U0001` | In **Memory controls**, record a play of *Param Sundari*. Then correct the explicit artist preference from Arijit Singh to Shreya Ghoshal and repeat the original request. | A single play records an episode. The explicit correction changes which artist preference can support the next answer. |
-| `U0001` | Mark a used episode irrelevant, delete a memory, and inspect its deletion receipt. Then pause memory and ask again. | The receipt reports application-level cleanup. While paused, the assistant can respond with empty personal context. |
+| `U0001` | Mark a used episode irrelevant, delete a preference, and inspect the deletion receipt. Then pause memory and ask again. | The receipt reports application-level cleanup. While paused, the assistant can respond with empty personal context. |
 | `U0002` | Run the playlist request with memory disabled, then select **Memory on** and repeat it. | Compare the context returned for the same listener and request. |
 | `U0003` | Run the podcast continuation request. | The unfinished episode has a saved position of 420 seconds, so the assistant suggests resuming at **7:00**. |
 | `U0016` | Run a request with sparse history. | Inspect how the assistant responds when there is little evidence for personalization. |
 
-### Screenshots from the deployed application
+### Screenshots
 
-**Home.** Select a demo listener, search the supplied catalog, or use a shortcut to start a music, playlist, or podcast request.
+**Recommendation and source memories**
 
-![Home screen of the deployed Listening Memory app, showing the demo listener selector, artist mixes, and quick picks](docs/screenshots/home.jpg)
-
-**Listening desk.** For U0001, the question “What should I listen to next?” produces a recommendation for *Tum Hi Ho*. The memory cards show the explicit artist preference and recent listening episode used in the answer.
-
-![Listening desk showing the recommendation for U0001 alongside the request and supporting memory cards](docs/screenshots/desk.jpg)
-
-**Memory controls.** The listener can review the timeline, correct a preference, record a listening event, pause memory, opt out, or export active memories.
-
-![Memory controls in the deployed app, showing the listener timeline and controls for managing saved memories](docs/screenshots/controls.jpg)
-
-**Deletion receipt.** After removing the temporary *Param Sundari* play created during the walkthrough, the reviewer can expand **Propagation status** to inspect cleanup across the graph, vectors, cache, and operational records.
-
-![Memory controls after deletion with the receipt's propagation status expanded](docs/screenshots/receipt.jpg)
+![Listening desk showing a recommendation and the memories used to produce it](docs/listening-desk.jpg)
 
 ## Architecture
 
@@ -221,7 +209,7 @@ node scripts/benchmark.js
 | `backend/reply.js` | Catalog-grounded replies and optional Ollama response selection. |
 | `backend/store.js`, `backend/local-db.js`, `drizzle/0000_pilot.sql` | Workspace persistence, local SQLite access, and schema. |
 | `data/`, `analysis/`, `scripts/prepare_data.py` | Source workbook, prepared JSON, data preparation, and EDA notebook. |
-| `tests/`, `docs/` | Regression tests, evaluation evidence, screenshots, and operations notes. |
+| `tests/`, `docs/` | Regression tests, evaluation evidence, screenshots, walkthrough, and operations notes. |
 | `Dockerfile`, `compose.yaml`, `.github/workflows/checks.yml` | Runtime image, local container setup, and CI checks. |
 
 ## Deployment and CI
